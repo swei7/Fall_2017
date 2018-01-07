@@ -20,6 +20,10 @@ namespace Type_Model
             InitializeComponent();
             //Get the lowest id number in database order by Id
             //assign the id to rowNum
+            string connectionString = "Server=localhost;Database=IMS;Integrated Security=True;";
+
+            string cmdText ="SELECT MIN(ID) FROM [dbo].[Type]; ";
+
         }
 
 
@@ -169,7 +173,10 @@ namespace Type_Model
                     {
                         textBox2.Text = reader["Description"].ToString();
                     }
-                    else textBox2.Text = "Empty";
+                    else
+                    {
+                        textBox2.Text = "Empty";
+                    }
                 }
                 conn.Close();
             }
@@ -202,7 +209,10 @@ namespace Type_Model
                     {
                         textBox2.Text = reader["Description"].ToString();
                     }
-                    else textBox2.Text = "Empty";
+                    else
+                    {
+                        textBox2.Text = "Empty";
+                    }
                 }
                 conn.Close();
             }
