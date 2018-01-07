@@ -20,19 +20,9 @@ namespace Type_Model
 
         int rowNum = 1;
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
-            string connectionString = "Server=loalhost;Database=Inventory Management System;Integrated Security=True;";
+            string connectionString = "Server=DESKTOP-9EIPQF9;Database=Inventory Management System;Integrated Security=True;";
 
             string cmdText =
                 "DELETE FROM [dbo].[Type] WHERE ID = @rowNum; ";
@@ -72,7 +62,6 @@ namespace Type_Model
 
             SqlDataReader reader = cmd.ExecuteReader();
 
-
             if (reader.HasRows)
             {
                 while (reader.Read())
@@ -82,16 +71,15 @@ namespace Type_Model
                     {
                         textBox2.Text = reader["Description"].ToString();
                     }
-                    textBox2.Text = "Empty";
+                    else textBox2.Text = "Empty";
                 }
                 conn.Close();
             }
         }
 
-
         private void button1_Click_1(object sender, EventArgs e)
         {
-            string connectionString = "Server=loalhost;Database=Inventory Management System;Integrated Security=True;";
+            string connectionString = "Server=DESKTOP-9EIPQF9;Database=Inventory Management System;Integrated Security=True;";
 
             string cmdText =
                 "INSERT INTO [dbo].[Type] (Name,Description) VALUES (@name,@description);";
@@ -118,7 +106,7 @@ namespace Type_Model
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string connectionString = "Server=loalhost;Database=Inventory Management System;Integrated Security=True;";
+            string connectionString = "Server=DESKTOP-9EIPQF9;Database=Inventory Management System;Integrated Security=True;";
 
             string cmdText =
                 "UPDATE [dbo].[Type] SET Name = @name, Description = @description WHERE ID = @rowNum; " ;
@@ -146,7 +134,7 @@ namespace Type_Model
 
         private void button3_Click(object sender, EventArgs e)
         {
-            string connectionString = "Server=localhost;Database=Inventory Management System;Integrated Security=True;";
+            string connectionString = "Server=DESKTOP-9EIPQF9;Database=Inventory Management System;Integrated Security=True;";
 
             string sqlCmd = "SELECT Name, Description FROM Type WHERE ID = @rowNum; ";
 
@@ -175,7 +163,7 @@ namespace Type_Model
                     {
                         textBox2.Text = reader["Description"].ToString();
                     }
-                    textBox2.Text = "Empty";
+                    else textBox2.Text = "Empty";
                 }
                 conn.Close();
             }
@@ -183,7 +171,7 @@ namespace Type_Model
 
         private void button4_Click(object sender, EventArgs e)
         {
-            string connectionString = "Server=localhost;Database=Inventory Management System;Integrated Security=True;";
+            string connectionString = "Server=DESKTOP-9EIPQF9;Database=Inventory Management System;Integrated Security=True;";
 
             string sqlCmd = "SELECT Name, Description FROM Type WHERE ID = @rowNum; ";
 
@@ -199,7 +187,6 @@ namespace Type_Model
 
             SqlDataReader reader = cmd.ExecuteReader();
 
-
             if (reader.HasRows)
             {
                 while (reader.Read())
@@ -209,7 +196,7 @@ namespace Type_Model
                     {
                         textBox2.Text = reader["Description"].ToString();
                     }
-                    textBox2.Text = "Empty";
+                    else textBox2.Text = "Empty";
                 }
                 conn.Close();
             }
